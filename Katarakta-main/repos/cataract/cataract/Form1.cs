@@ -9,6 +9,8 @@ namespace cataract
         private Point pos;
         private bool dragging, lose = false;
 
+        private int countcoins = 0;
+
 
         public Form1()
         {
@@ -71,6 +73,8 @@ namespace cataract
             if (coin.Top >= 650)
             {
                 coin.Top = -50;
+                Random rand = new Random();
+                coin.Left = rand.Next(150, 560);
             }
 
 
@@ -105,12 +109,24 @@ namespace cataract
 
             }
 
+
+
             if (player.Bounds.IntersectsWith(enemy1.Bounds) || player.Bounds.IntersectsWith(enemy2.Bounds))
             {
                 timer.Enabled = false;
                 labelLose.Visible = true;
                 buttonRestart.Visible = true;
                 lose = true;
+            }
+
+            if (player.Bounds.IntersectsWith(coin.Bounds))
+            {
+                countcoins++;
+                labelCoin.Text = "Монеты: " + countcoins.ToString();
+                coin.Top = -50;
+                Random rand = new Random();
+                coin.Left = rand.Next(150, 560);
+
             }
         }
 
@@ -122,7 +138,7 @@ namespace cataract
                 player.Left -= speed;
             else if ((e.KeyCode == Keys.Right || e.KeyCode == Keys.D) && player.Right < 700)
                 player.Left += speed;
-            if (lose = true)
+            if (lose == true)
             {
                 return;
             }
@@ -141,6 +157,10 @@ namespace cataract
             buttonRestart.Visible = false;
             timer.Enabled = true;
             lose = false;
+            countcoins = 0;
+            labelCoin.Text = "Монеты: 0";
+            coin.Top = -500;
+
         }
     }
 

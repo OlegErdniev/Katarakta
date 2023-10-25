@@ -39,6 +39,7 @@
             labelLose = new Label();
             buttonRestart = new Button();
             coin = new PictureBox();
+            labelCoin = new Label();
             ((System.ComponentModel.ISupportInitialize)bg1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bg2).BeginInit();
@@ -143,12 +144,25 @@
             coin.TabIndex = 9;
             coin.TabStop = false;
             // 
+            // labelCoin
+            // 
+            labelCoin.AutoSize = true;
+            labelCoin.BackColor = Color.FromArgb(64, 64, 64);
+            labelCoin.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCoin.ForeColor = SystemColors.ControlLightLight;
+            labelCoin.Location = new Point(0, 9);
+            labelCoin.Name = "labelCoin";
+            labelCoin.Size = new Size(118, 25);
+            labelCoin.TabIndex = 10;
+            labelCoin.Text = "Монеты: 0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(840, 650);
+            Controls.Add(labelCoin);
             Controls.Add(coin);
             Controls.Add(buttonRestart);
             Controls.Add(labelLose);
@@ -185,5 +199,6 @@
         private Label labelLose;
         private Button buttonRestart;
         private PictureBox coin;
+        private Label labelCoin;
     }
 }
