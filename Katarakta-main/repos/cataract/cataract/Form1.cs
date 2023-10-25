@@ -63,9 +63,15 @@ namespace cataract
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int speed = 10;
+            int speed = 8;
             bg1.Top += speed;
             bg2.Top += speed;
+            coin.Top += speed;
+
+            if (coin.Top >= 650)
+            {
+                coin.Top = -50;
+            }
 
 
             int carSpeed = 5;
@@ -110,15 +116,16 @@ namespace cataract
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(lose = true)
-            {
-                return;
-            }
+
             int speed = 10;
             if ((e.KeyCode == Keys.Left || e.KeyCode == Keys.A) && player.Left > 150)
                 player.Left -= speed;
             else if ((e.KeyCode == Keys.Right || e.KeyCode == Keys.D) && player.Right < 700)
                 player.Left += speed;
+            if (lose = true)
+            {
+                return;
+            }
         }
 
         private void labelLose_Click(object sender, EventArgs e)
@@ -136,5 +143,5 @@ namespace cataract
             lose = false;
         }
     }
-    
+
 }

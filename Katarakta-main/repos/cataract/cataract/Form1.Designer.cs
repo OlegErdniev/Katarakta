@@ -38,11 +38,13 @@
             enemy2 = new PictureBox();
             labelLose = new Label();
             buttonRestart = new Button();
+            coin = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bg1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bg2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)enemy1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)enemy2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)coin).BeginInit();
             SuspendLayout();
             // 
             // bg1
@@ -59,9 +61,9 @@
             // 
             player.BackColor = Color.FromArgb(64, 64, 64);
             player.Image = (Image)resources.GetObject("player.Image");
-            player.Location = new Point(420, 510);
+            player.Location = new Point(417, 513);
             player.Name = "player";
-            player.Size = new Size(128, 128);
+            player.Size = new Size(100, 100);
             player.SizeMode = PictureBoxSizeMode.StretchImage;
             player.TabIndex = 3;
             player.TabStop = false;
@@ -85,9 +87,9 @@
             // 
             enemy1.BackColor = Color.FromArgb(64, 64, 64);
             enemy1.Image = (Image)resources.GetObject("enemy1.Image");
-            enemy1.Location = new Point(184, -150);
+            enemy1.Location = new Point(178, -150);
             enemy1.Name = "enemy1";
-            enemy1.Size = new Size(128, 128);
+            enemy1.Size = new Size(100, 100);
             enemy1.SizeMode = PictureBoxSizeMode.StretchImage;
             enemy1.TabIndex = 5;
             enemy1.TabStop = false;
@@ -96,10 +98,10 @@
             // 
             enemy2.BackColor = Color.FromArgb(64, 64, 64);
             enemy2.Image = (Image)resources.GetObject("enemy2.Image");
-            enemy2.Location = new Point(555, -311);
+            enemy2.Location = new Point(539, -311);
             enemy2.Name = "enemy2";
-            enemy2.Size = new Size(128, 128);
-            enemy2.SizeMode = PictureBoxSizeMode.StretchImage;
+            enemy2.Size = new Size(100, 100);
+            enemy2.SizeMode = PictureBoxSizeMode.CenterImage;
             enemy2.TabIndex = 6;
             enemy2.TabStop = false;
             // 
@@ -130,12 +132,24 @@
             buttonRestart.UseVisualStyleBackColor = false;
             buttonRestart.Click += buttonRestart_Click;
             // 
+            // coin
+            // 
+            coin.BackColor = Color.FromArgb(64, 64, 64);
+            coin.Image = (Image)resources.GetObject("coin.Image");
+            coin.Location = new Point(391, -550);
+            coin.Name = "coin";
+            coin.Size = new Size(64, 64);
+            coin.SizeMode = PictureBoxSizeMode.StretchImage;
+            coin.TabIndex = 9;
+            coin.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(840, 650);
+            Controls.Add(coin);
             Controls.Add(buttonRestart);
             Controls.Add(labelLose);
             Controls.Add(enemy2);
@@ -155,6 +169,7 @@
             ((System.ComponentModel.ISupportInitialize)bg2).EndInit();
             ((System.ComponentModel.ISupportInitialize)enemy1).EndInit();
             ((System.ComponentModel.ISupportInitialize)enemy2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)coin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,5 +184,6 @@
         private PictureBox enemy2;
         private Label labelLose;
         private Button buttonRestart;
+        private PictureBox coin;
     }
 }
