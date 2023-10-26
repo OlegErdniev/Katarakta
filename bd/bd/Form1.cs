@@ -23,6 +23,7 @@ namespace bd
             bg2.MouseDown += MouseClickDown;
             bg2.MouseUp += MouseClickUp;
             bg2.MouseMove += MouseClickMove;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             labelLose.Visible = false;
             buttonRestart.Visible = false;
